@@ -1481,10 +1481,10 @@ public class Minecraft implements IThreadListener, IPlayerUsage
     {
         if (!leftClick)
         {
-            this.leftClickCounter = 5;
+            this.leftClickCounter = 10;
         }
 
-        if (this.leftClickCounter <= 5 && !this.thePlayer.isUsingItem())
+        if (this.leftClickCounter <= 10 && !this.thePlayer.isUsingItem())
         {
             if (leftClick && this.objectMouseOver != null && this.objectMouseOver.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK)
             {
@@ -1505,7 +1505,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
     private void clickMouse()
     {
-        if (this.leftClickCounter <= 5)
+        if (this.leftClickCounter <= 10)
         {
             this.thePlayer.swingItem();
 
@@ -1875,7 +1875,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                 }
             }
 
-            if (this.leftClickCounter > 5)
+            if (this.leftClickCounter > 10)
             {
                 --this.leftClickCounter;
             }
